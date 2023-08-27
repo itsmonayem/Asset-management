@@ -24,5 +24,8 @@ urlpatterns = [
     path('check-out/<id>/', check_out, name="check_out"),
     path('return-back/<id>/', return_back, name="return_back"),
     path('device-log/',device_log,name="device_log"),
+    path('login/', login_page, name="login_page"),
+    path('register/', register, name="register"),
+    path('logout/',logout_page, name="logout_page"),
     path('admin/', admin.site.urls),
 ]

@@ -26,7 +26,6 @@
             <th scope="col">id</th>
             <th scope="col">Employee Name</th>
             <th scope="col">Position</th>
-            <th scope="col">Company</th>
           </tr>
         </thead>
         <tbody>
@@ -35,15 +34,6 @@
             <th scope="row">{{employee.employee_id}}</th>
             <td>{{employee.employee_name}}</td>
             <td>{{employee.employee_position}}</td>
-            <td>{{employee.employee_comp_name}}</td>
-            <!--
-            <td>
-                <img src="/media/{{receipe.receipe_image}}" style="height : 200px">
-            </td>
-            <td>
-                <a href="/delete-receipe/{{receipe.id}}/" class="btn btn-danger">Delete</a>
-            </td>
-        -->
           </tr>
         {% endfor %}
         </tbody>
