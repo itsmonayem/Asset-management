@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block start %}
+
+
+<div class="container mt-5">
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Add Employee</h2>
+        <hr>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Employee Name</label>
+          <input name="employee_name" type="text" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Position</label>
+          <input name="employee_position" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success ">Add employee</button>
+      </form>
+
+      <hr>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Company</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for employee in employees %}
+          <tr>
+            <th scope="row">{{employee.employee_id}}</th>
+            <td>{{employee.employee_name}}</td>
+            <td>{{employee.employee_position}}</td>
+            <td>{{employee.employee_comp_name}}</td>
+            <!--
+            <td>
+                <img src="/media/{{receipe.receipe_image}}" style="height : 200px">
+            </td>
+            <td>
+                <a href="/delete-receipe/{{receipe.id}}/" class="btn btn-danger">Delete</a>
+            </td>
+        -->
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock %}

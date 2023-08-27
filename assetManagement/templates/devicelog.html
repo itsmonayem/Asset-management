@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block start %}
+
+
+<div class="container mt-5">
+    
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Company</th>
+            <th scope="col">checkout time</th>
+            <th scope="col">checkout condition</th>
+            <th scope="col">Occupied By</th>
+            <th scope="col">ReturnBack time</th>
+            <th scope="col">ReturnBack condition</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for device in devices %}
+          <tr>
+            <th scope="row">{{device.device_id}}</th>
+            <td>{{device.device_comp_name}}</td>
+            <td>{{device.device_checkout_time}}</td>
+            <td>{{device.device_checkout_condition}}</td>
+            <td>{{device.device_occupied_by}}</td>
+            <td>{{device.device_return_back_time}}</td>
+            <td>{{device.device_return_back_condition}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock %}
