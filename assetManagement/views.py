@@ -74,8 +74,8 @@ def check_out(request, id):
         _employee_id = request.POST.get('_employee_id')
 
 
+        #cehck for valid employee_id for this company
         queryset = Employee.objects.all().filter(employee_comp_name = request.user, employee_id = _employee_id)
-        print(len(queryset))
         if len(queryset) == 0:
             messages.info(request, "Invalid Employee Id")
             return render(request, 'checkoutform.html')

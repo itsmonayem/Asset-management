@@ -30,7 +30,6 @@
             <th scope="col">id</th>
             <th scope="col">Device Type</th>
             <th scope="col">Device Model</th>
-            <th scope="col">Company</th>
             <th scope="col">Device Condition</th>
             <th scope="col">Occupied By</th>
           </tr>
@@ -41,9 +40,14 @@
             <th scope="row">{{device.device_id}}</th>
             <td>{{device.device_type}}</td>
             <td>{{device.device_model}}</td>
-            <td>{{device.device_comp_name}}</td>
             <td>{{device.device_condition}}</td>
-            <td>{{device.device_occupied_by}}</td>
+            <td>
+                {% if device.device_occupied_by %}
+                {{device.device_occupied_by}}
+                {% else %}
+                company
+                {% endif %}
+            </td>
             <td>
                     {% if device.device_occupied_by %}
                     <a href="/return-back/{{device.id}}/" class="btn btn-danger">Return Back</a>
