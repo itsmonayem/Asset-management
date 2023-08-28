@@ -4,6 +4,18 @@
 
 <div class="container mt-5">
     
+      <form class="col-6 mx-auto card p-3 shadow-lg" method="post">
+        {% csrf_token %}
+        <h4>Serach log history by Device id</h4>
+        <hr>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Device Id</label>
+          <input name="search_device_id" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success ">Search</button>
+      </form>
+    </div>
+
       <table class="table">
         <thead>
           <tr>

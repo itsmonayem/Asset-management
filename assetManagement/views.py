@@ -126,6 +126,14 @@ def return_back(request, id):
 #viewing devices log history based on company username
 @login_required(login_url='/login/')
 def device_log(request):
+    #Search device Log history by its id
+    if request.method == "POST":
+        search_device_id = request.POST.get('search_device_id')
+        queryset = DeviceLogInfo.objects.all().filter(device_comp_name=request.user, device_id = search_device_id)
+        context = {'devices' : queryset}
+        return render(request, 'devicelog.html', context)
+    
+
     queryset = DeviceLogInfo.objects.all().filter(device_comp_name=request.user)
     context = {'devices' : queryset}
     return render(request, 'devicelog.html', context)
