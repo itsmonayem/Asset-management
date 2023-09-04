@@ -1,5 +1,5 @@
-# Asset-management
-The Corporate Asset Tracking App is a Django web application designed to help companies track their corporate assets, such as phones, tablets, laptops, and other equipment, that are handed out to employees. The app provides features for managing employees, devices, and device logs, making it easy for companies to keep track of who has which device and when.
+#Device Track
+DeviceTrack is an advanced web-based system that simplifies device and employee management in enterprises. It offers user authentication, real-time device allocation and tracking, and comprehensive device log history. With an intuitive interface, employees can effortlessly request and return devices, while organizations gain better control and resource optimization. DeviceTrack enhances operational efficiency, making it the ideal solution for streamlined device management within enterprises.
 
 Features
 
